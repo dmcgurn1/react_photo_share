@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Dylanstagram",
-    "slug": "Dylanstagram",
+    "name": "react_photo_share",
+    "slug": "react_photo_share",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "dylanstagram",
+    "scheme": "react_photo_share",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
