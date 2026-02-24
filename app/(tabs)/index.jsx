@@ -1,10 +1,10 @@
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import { Link } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const posts = [];
 
-const go_home = () => {
+const placeholderFunction = () => {
   posts.push('photo123');
   console.log(posts);
 };
@@ -15,9 +15,12 @@ const App = () => {
   
   return (
     
+    <ScrollView contentContainerStyle={{flex:1}}>
     <View style={styles.AppContainerBackground} >
     
       <View style={styles.AppContainerForeground}>
+
+        {/* timeline container? */}
       
         <View style={styles.TitleContainer}>
 
@@ -31,22 +34,13 @@ const App = () => {
         
         {/* Top right profile button */}
         <View style={{ position: 'absolute', top: '3%', right: '10%' }}>
-          <TouchableOpacity onPress={go_home}>
+          <TouchableOpacity onPress={placeholderFunction}>
             <View style={styles.button}>
               <Ionicons name="person" size={'300%'} color="black" />
+              <View><Link href='/profile'>Profile</Link></View>
             </View>
           </TouchableOpacity>
         </View>
-
-        {/* Top left home button */}
-        <View style={{ position: 'absolute', top: '3%', left: '10%' }}>
-          <TouchableOpacity onPress={go_home}>
-            <View style={styles.button}>
-              <Ionicons name="home" size={'300%'} color="black" />
-            </View>
-          </TouchableOpacity>
-        </View>
-
         
         {/* Placeholder Post 1 */}
           {/* Metadata (username, timestamp) */}
@@ -72,31 +66,9 @@ const App = () => {
           <Image source={PlaceholderImage} style={styles.image} />
         </View>
 
-        {/* </View> */}
-
-        {/* "Add post" button */}
-        
-        {/* <View style={{ justifyContent: 'end', alignItems: 'end', margin: 50 }}> */}
-          
-          
-          {/* <TouchableOpacity onPress={placeholderFunction}>
-            <View style={styles.button}>
-              <Text>Add post</Text>
-            </View>
-          </TouchableOpacity> */}
-          
-          {/* </View> */}
-          
-        {/* "About app" button */}
-          
-          {/* <TouchableOpacity onPress={placeholderFunction}>
-            <View style={styles.button}>
-              <Link href="/about">About app</Link>
-            </View>
-          </TouchableOpacity> */}
-
       </View>
     </View>
+    </ScrollView>
   );
 };
 
@@ -106,8 +78,8 @@ const styles = StyleSheet.create({
   AppContainerBackground: {
     alignItems: 'center',
     backgroundColor: 'grey',
-    height: '100%',
     width: '100%',
+    height: '100%',
   },
   
   AppContainerForeground: {
@@ -116,13 +88,13 @@ const styles = StyleSheet.create({
     height:'100%',
     // width: '90%', // debugging
     // height:'90%', // debugging
-    // // backgroundColor: 'orange', // debugging
-    backgroundColor: 'salmon', //debugging
-    // backgroundColor: 'white',
+    // backgroundColor: 'orange', // debugging
+    // backgroundColor: 'salmon', //debugging
+    backgroundColor: 'white',
     alignItems: 'center',
   },
 
-  // App Title (x4)
+  // App Titles (x3)
   AppTitle: {
     fontSize: 30,
     fontWeight: 'bold',
@@ -131,14 +103,6 @@ const styles = StyleSheet.create({
     marginBottom: 0,
     fontFamily: 'Comic Sans MS',
   },
-
-  // AppTitleWingdings: {
-  //   fontSize: 30,
-  //   fontWeight: 'bold',
-  //   color: 'black',
-  //   padding: 5,
-  //   fontFamily: 'Wingdings',
-  // },
 
   AppTitleWingdingsMedium: {
     fontSize: 12,
@@ -151,11 +115,10 @@ const styles = StyleSheet.create({
 
   AppTitleWingdingsLessMedium: {
     fontSize: 10,
-    // fontWeight: 'bold',
     color: 'black',
-    // padding: 50,
-    marginBottom: 20, // Last title element used therefore we pad 20 to have post slightly separated from app title.
     fontFamily: 'Wingdings',
+
+    marginBottom: 20, // Last title element used therefore we pad 20 to have post slightly separated from app title.
   },
 
   // What we will call "elements" for now
@@ -178,8 +141,7 @@ const styles = StyleSheet.create({
   postMetadataContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    
-    // backgroundColor: 'salmon', # debugging
+    // backgroundColor: 'salmon', // parameterise?
   },
 
   postInfoText: {
@@ -187,14 +149,14 @@ const styles = StyleSheet.create({
     margin: 10,
     fontSize: 24,
     fontWeight: '400',
-    fontFamily: 'Impact',
+    fontFamily: 'Impact', // parameterise?
   },
 
   // End of "elements"
   
   // Pressables
   button: {
-    // backgroundColor: '#2196F3',
+    // backgroundColor: '#2196F3', //parameterise?
     backgroundColor: 'white',
     padding: 10,
     "margin-bottom": 10,
