@@ -13,6 +13,7 @@ export default function TabLayout() {
         headerTintColor: '#fff',
         tabBarStyle: {
         backgroundColor: '#25292e',
+        height: '10%',
         },
     }}
     >
@@ -22,7 +23,7 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={24} />
+            <Ionicons name={focused ? 'home-sharp' : 'home-outline'} color={color} size={32} />
           ),
         }}
       />
@@ -32,7 +33,7 @@ export default function TabLayout() {
         options={{
           title: 'Post',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'add-outline' : 'add-circle-outline'} color={color} size={24}/>
+            <Ionicons name={focused ? 'add-outline' : 'add-circle-outline'} color={color} size={32}/>
           ),
         }}
       />
@@ -42,7 +43,7 @@ export default function TabLayout() {
         options={{
           title: 'Settings',
           tabBarIcon: ({ color, focused }) => (
-            <Ionicons name={focused ? 'cog-outline' : 'cog'} color={color} size={24}/>
+            <Ionicons name={focused ? 'cog-outline' : 'cog'} color={color} size={32}/>
           ),
         }}
       />
@@ -74,4 +75,4 @@ export default function TabLayout() {
       />
     </Tabs>
   );
-}
+};
