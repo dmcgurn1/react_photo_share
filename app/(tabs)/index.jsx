@@ -17,28 +17,28 @@ const postX = () => {
   return (
     // {/* Placeholder Post 1 */}
     // {/* Metadata (username, timestamp) */}
-    <View style={styles.AppContainerForeground}>
-    <View style={styles.postMetadataContainer}>
-      <Text style={styles.postMetadataText}>johnny.b</Text>
-      <Text style={styles.postMetadataText}>2026-02-01 09:57:13</Text>
-    </View>        
-    
-    {/* Content - image */}
-    <View style={styles.imageContainer}>
-      <Image source={PlaceholderImage} style={styles.image} />
-    </View>
+    <View style={styles.TimelineContainer}>
+      <View style={styles.postMetadataContainer}>
+        <Text style={styles.postMetadataText}>johnny.b</Text>
+        <Text style={styles.postMetadataText}>2026-02-01 09:57:13</Text>
+      </View>        
+      
+      {/* Content - image */}
+      <View style={styles.imageContainer}>
+        <Image source={PlaceholderImage} style={styles.image} />
+      </View>
 
-    {/* Placeholder Post 2 */}
-    {/* Metadata (username, timestamp) */}
-    <View style={styles.postMetadataContainer}>
-      <Text style={styles.postMetadataText}>johnny.b</Text>
-      <Text style={styles.postMetadataText}>2026-02-01 09:00:00</Text>
-    </View>        
-    
-    {/* Content - image */}
-    <View style={styles.imageContainer}>
-      <Image source={PlaceholderImage} style={styles.image} />
-    </View>
+      {/* Placeholder Post 2 */}
+      {/* Metadata (username, timestamp) */}
+      <View style={styles.postMetadataContainer}>
+        <Text style={styles.postMetadataText}>johnny.b</Text>
+        <Text style={styles.postMetadataText}>2026-02-01 09:00:00</Text>
+      </View>        
+      
+      {/* Content - image */}
+      <View style={styles.imageContainer}>
+        <Image source={PlaceholderImage} style={styles.image} />
+      </View>
     </View>
     );
 };
@@ -47,25 +47,19 @@ const App = () => {
   
   return (
     
-    <>
-    <Stack.Screen options={{ headerShown: false }} />
-    
     <ScrollView contentContainerStyle={{flex:1}}>
     <View style={styles.AppContainerBackground} >
     
       <View style={styles.AppContainerForeground}>
-
-        {/* timeline container? */}
         
-        <View style={styles.TitleContainer}>
+        <View style={styles.AppTitleContainer}>
 
           <Text style={styles.AppTitle}>Dylanstagram</Text> {/* Don't deploy to prod with this... */}
           {/* <Text style={styles.AppTitle}>react_photo_share</Text> */}
+          {/* Goofing */}
+          <Text style={styles.AppTitleWingdingsMedium}>(react_photo_share)</Text>
+          <Text style={styles.AppTitleWingdingsLessMedium}>Reminiscient of early Instagram</Text>
         </View>
-
-        {/* Goofing */}
-        <Text style={styles.AppTitleWingdingsMedium}>(react_photo_share)</Text>
-        <Text style={styles.AppTitleWingdingsLessMedium}>Reminiscient of early Instagram</Text>
         
         {/* Top right profile button */}
         <View style={{ position: 'absolute', top: '3%', right: '10%' }}>
@@ -76,15 +70,15 @@ const App = () => {
             </View>
           </TouchableOpacity>
         </View>
+
+        {/* <View style={styles.TimelineContainer}> </View>*/ }         
         
         {postX()};
 
-      </View>
+        </View>
     
     </View>
     </ScrollView>
-    
-    </>
   );
 };
 
@@ -92,60 +86,65 @@ const styles = StyleSheet.create({
   
   // Structural:
   AppContainerBackground: {
-    alignItems: 'center',
-    backgroundColor: 'grey',
     width: '100%',
     height: '100%',
+    alignItems: 'center',
+    // backgroundColor: 'grey',
+    backgroundColor: '#25292e', // nicer on the eyes
   },
   
   AppContainerForeground: {
     flexDirection: 'column',
     width: '100%',
     height:'100%',
-    // width: '90%', // debugging
-    // height:'90%', // debugging
-    backgroundColor: 'orange', // debugging
-    // backgroundColor: 'salmon', //debugging
-    backgroundColor: 'white',
+    alignItems: 'center',
+    // backgroundColor: 'white',
+    backgroundColor: '#25292e', // nicer on the eyes
+  },
+
+  TimelineContainer: {
+    width: '100%',
+    height: '90%',
+    alignItems: 'center',
+    backgroundColor: '#25292e', // nicer on the eyes
+  },
+
+  AppTitleContainer: {
+    height: '10%',
+    margin: 20,
     alignItems: 'center',
   },
 
-  // App Titles (x3)
   AppTitle: {
     fontSize: 30,
-    fontWeight: 'bold',
     color: 'black',
-    padding: 5,
-    marginTop: '10%',
     fontFamily: 'Comic Sans MS',
+    fontWeight: 'bold',
+    padding: 5,
   },
 
   AppTitleWingdingsMedium: {
     fontSize: 12,
-    fontWeight: 'bold',
     color: 'black',
-    padding: 5,
-    marginBottom: 0,
     fontFamily: 'Wingdings',
+    fontWeight: 'bold',
+    padding: 5,
   },
 
   AppTitleWingdingsLessMedium: {
     fontSize: 10,
     color: 'black',
     fontFamily: 'Wingdings',
-
-    marginBottom: 20, // Last title element used therefore we pad 20 to have post slightly separated from app title.
   },
 
-  // What we will call "elements" for now
-
+  // posts on timeline
   imageContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     width: '50%',
     height: '70%',
     margin: 10,
-    backgroundColor: 'lightgrey', // debugging
+    backgroundColor: 'lightgrey',
     marginBottom: '5%',
   },
 
@@ -168,12 +167,11 @@ const styles = StyleSheet.create({
     fontFamily: 'Impact', // parameterise?
   },
 
-  // End of "elements"
-  
   // Pressables
   button: {
     // backgroundColor: '#2196F3', //parameterise?
-    backgroundColor: 'white',
+    // backgroundColor: 'white',
+    backgroundColor: '#25292e', // nicer on the eyes
     // padding: 10,
     "margin-bottom": 10,
   },
