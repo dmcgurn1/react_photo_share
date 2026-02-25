@@ -19,6 +19,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'start',
     padding: 20,
+    backgroundColor: '#25292e', //nicer on the eyes
   },
   imageContainer: {
     flex: 1,

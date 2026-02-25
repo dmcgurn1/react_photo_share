@@ -11,24 +11,21 @@ const tempProfileRoute = '/profile/' + tempUserID;
 
 export default function MyProfile () {
     return (
-        <>
-        <Stack.Screen options={{ title: 'MyProfile' }} />
         <View style={styles.default_container}>
-        <View>
-            /profile/{myProfileID}
-            <br></br>
-            Welcome to your profile, <br></br>{myUserName}
-        </View>
+          <View>
+              /profile/{myProfileID}
+              <br></br>
+              Welcome to your profile, <br></br>{myUserName}
+          </View>
 
-        <View>
-          <TouchableOpacity>
-            <View style={{padding:'10'}}>
-              <View><Link href={tempProfileRoute}>Link to other profile</Link></View>
-            </View>
-          </TouchableOpacity>
+          <View>
+            <TouchableOpacity>
+              <View style={{padding:'10'}}>
+                <View><Link href={tempProfileRoute}>Link to other profile</Link></View>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
-        </View>
-        </>
     );
 };
 
@@ -38,6 +35,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'start',
     padding: 20,
+    backgroundColor: '#8d9093', //nicer on the eyes - lighter
   }
 });
 

@@ -24,5 +24,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'start',
     padding: 20,
+    backgroundColor: '#8d9093', //nicer on the eyes  - lighter
   }
 });
