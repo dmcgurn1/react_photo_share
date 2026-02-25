@@ -1,5 +1,6 @@
+//home page
 import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
-import { Link } from 'expo-router';
+import { Link, Stack } from 'expo-router';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 const posts = [];
@@ -46,13 +47,16 @@ const App = () => {
   
   return (
     
+    <>
+    <Stack.Screen options={{ headerShown: false }} />
+    
     <ScrollView contentContainerStyle={{flex:1}}>
     <View style={styles.AppContainerBackground} >
     
       <View style={styles.AppContainerForeground}>
 
         {/* timeline container? */}
-      
+        
         <View style={styles.TitleContainer}>
 
           <Text style={styles.AppTitle}>Dylanstagram</Text> {/* Don't deploy to prod with this... */}
@@ -76,8 +80,11 @@ const App = () => {
         {postX()};
 
       </View>
+    
     </View>
     </ScrollView>
+    
+    </>
   );
 };
 
@@ -97,7 +104,7 @@ const styles = StyleSheet.create({
     height:'100%',
     // width: '90%', // debugging
     // height:'90%', // debugging
-    // backgroundColor: 'orange', // debugging
+    backgroundColor: 'orange', // debugging
     // backgroundColor: 'salmon', //debugging
     backgroundColor: 'white',
     alignItems: 'center',
@@ -109,7 +116,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: 'black',
     padding: 5,
-    marginBottom: 0,
+    marginTop: '10%',
     fontFamily: 'Comic Sans MS',
   },
 
