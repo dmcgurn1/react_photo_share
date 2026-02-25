@@ -5,7 +5,7 @@ const PlaceholderImage = require('@/assets/images/please_upload.png');
 
 export default function PostPhoto() {
   return (
-    <View style={styles.container}>
+    <View style={styles.default_container}>
       <View style={styles.imageContainer}>
         <Image source={PlaceholderImage} style={styles.image} />
       </View>
@@ -14,11 +14,10 @@ export default function PostPhoto() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  default_container: {
     flex: 1,
-    backgroundColor: '#25292e',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'start',
     padding: 20,
   },
   imageContainer: {

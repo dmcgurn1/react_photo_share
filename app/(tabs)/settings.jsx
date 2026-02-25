@@ -1,12 +1,14 @@
 import { Text, View, StyleSheet } from 'react-native';
 import { Link } from 'expo-router';
 
+const myProfileID = '1';
+
 export default function AboutScreen() {
   return (
     <View style={styles.container}>
 
       <View>
-        <Link href="/profile"><Text style={styles.text}> - Profile</Text></Link>
+        <Link href={"/profile/"+myProfileID}><Text style={styles.text}> - Profile</Text></Link>
       </View>
 
       <View>

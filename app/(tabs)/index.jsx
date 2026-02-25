@@ -10,6 +10,37 @@ const placeholderFunction = () => {
 };
 
 const PlaceholderImage = require('@/assets/images/default_photo.jpg');
+const myProfileID = '1';
+
+const postX = () => {
+  return (
+    // {/* Placeholder Post 1 */}
+    // {/* Metadata (username, timestamp) */}
+    <View style={styles.AppContainerForeground}>
+    <View style={styles.postMetadataContainer}>
+      <Text style={styles.postMetadataText}>johnny.b</Text>
+      <Text style={styles.postMetadataText}>2026-02-01 09:57:13</Text>
+    </View>        
+    
+    {/* Content - image */}
+    <View style={styles.imageContainer}>
+      <Image source={PlaceholderImage} style={styles.image} />
+    </View>
+
+    {/* Placeholder Post 2 */}
+    {/* Metadata (username, timestamp) */}
+    <View style={styles.postMetadataContainer}>
+      <Text style={styles.postMetadataText}>johnny.b</Text>
+      <Text style={styles.postMetadataText}>2026-02-01 09:00:00</Text>
+    </View>        
+    
+    {/* Content - image */}
+    <View style={styles.imageContainer}>
+      <Image source={PlaceholderImage} style={styles.image} />
+    </View>
+    </View>
+    );
+};
 
 const App = () => {
   
@@ -37,34 +68,12 @@ const App = () => {
           <TouchableOpacity onPress={placeholderFunction}>
             <View style={styles.button}>
               <Ionicons name="person" size={'300%'} color="black" />
-              <View><Link href='/profile'>Profile</Link></View>
+              <View><Link href={'/profile/' + myProfileID}>My Profile</Link></View>
             </View>
           </TouchableOpacity>
         </View>
         
-        {/* Placeholder Post 1 */}
-          {/* Metadata (username, timestamp) */}
-        <View style={styles.postMetadataContainer}>
-          <Text style={styles.postInfoText}>johnny.b</Text>
-          <Text style={styles.postInfoText}>2026-02-01 09:57:13</Text>
-        </View>        
-        
-        {/* Content - image */}
-        <View style={styles.imageContainer}>
-          <Image source={PlaceholderImage} style={styles.image} />
-        </View>
-
-        {/* Placeholder Post 2 */}
-          {/* Metadata (username, timestamp) */}
-        <View style={styles.postMetadataContainer}>
-          <Text style={styles.postInfoText}>johnny.b</Text>
-          <Text style={styles.postInfoText}>2026-02-01 09:00:00</Text>
-        </View>        
-        
-        {/* Content - image */}
-        <View style={styles.imageContainer}>
-          <Image source={PlaceholderImage} style={styles.image} />
-        </View>
+        {postX()};
 
       </View>
     </View>
@@ -144,7 +153,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'salmon', // parameterise?
   },
 
-  postInfoText: {
+  postMetadataText: {
     color: 'black', 
     margin: 10,
     fontSize: 24,
@@ -158,7 +167,7 @@ const styles = StyleSheet.create({
   button: {
     // backgroundColor: '#2196F3', //parameterise?
     backgroundColor: 'white',
-    padding: 10,
+    // padding: 10,
     "margin-bottom": 10,
   },
 });
