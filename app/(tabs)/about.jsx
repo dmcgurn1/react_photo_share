@@ -3,9 +3,9 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 export default function AboutScreen() {
   return (
-    <View style={styles.container}>
+    <View style={styles.default_container}>
       <View><Ionicons name="camera-outline" size={'300%'} color="royalblue" /></View>
-      <Text style={styles.text}>About screen (Work in progress 👷🚧)<br></br>
+      <Text style={styles.default_text}>About screen (Work in progress 👷🚧)<br></br>
         Welcome to react_photo_share - an attempt to recreate the early days of a non-explicitly named photo-sharing mobile application...
       </Text>
     </View>
@@ -13,14 +13,14 @@ export default function AboutScreen() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  default_container: {
     flex: 1,
     backgroundColor: '#25292e',
     alignItems: 'center',
     justifyContent: 'center',
     padding: 20,
   },
-  text: {
+  default_text: {
     color: '#fff',
     fontSize: 35
   },

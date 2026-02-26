@@ -1,5 +1,5 @@
 import { StyleSheet, View, TouchableOpacity  } from "react-native";
-import { Link, Stack } from 'expo-router';
+import { Link } from 'expo-router';
 
 const myProfileID = '1';
 const myUserName = "spoudaios|spoudaîos|σπουδαῖος";
@@ -12,7 +12,7 @@ const tempProfileRoute = '/profile/' + tempUserID;
 export default function ProfileFetch () {
     return (
         <View style={styles.default_container}>
-          <View>
+          <View style={styles.default_text}>
               /profile/{tempUserID}
               <br></br>
               Welcome to your profile, <br></br>{tempUserName}
@@ -36,7 +36,11 @@ const styles = StyleSheet.create({
     justifyContent: 'start',
     padding: 20,
     backgroundColor: '#8d9093', //nicer on the eyes - lighter
-  }
+  },
+  default_text: {
+    color: '#fff',
+    fontSize: 35
+  },
 });
 
 ProfileFetch();

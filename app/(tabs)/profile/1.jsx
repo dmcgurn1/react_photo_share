@@ -1,5 +1,5 @@
 import { StyleSheet, View, TouchableOpacity  } from "react-native";
-import { Link, Stack } from 'expo-router';
+import { Link } from 'expo-router';
 
 const myProfileID = '1';
 const myUserName = "spoudaios|spoudaîos|σπουδαῖος";
@@ -36,7 +36,11 @@ const styles = StyleSheet.create({
     justifyContent: 'start',
     padding: 20,
     backgroundColor: '#8d9093', //nicer on the eyes - lighter
-  }
+  },
+  default_text: {
+    color: '#fff',
+    fontSize: 35
+  },
 });
 
 MyProfile();
